@@ -69,7 +69,7 @@ projet/          ArcMap 工程本体
   sources/       任务书、文献与少量原始数据（CORINE/INSEE 等大体积公开数据已移除）
 docs/            重建的文档（报告 FR/ZH、课程、技术附录）
 figures/         由栅格重新渲染的 4 张图
-cours/           CM 讲义 16 份 / TD 题目 / 期中期末
+cours/           课程资料（入口见 cours/README.md）：16 份 CM / 9 次 TD / 期中期末
 sources/chatgpt/ 当时与 ChatGPT 的对话原文（3 段）
 tools/           render_figures.ps1（无 ArcGIS 时重画栅格图）
 ```
@@ -141,7 +141,7 @@ projet/          le projet ArcMap
   sources/       énoncé, documentation et données de contexte (les jeux de données massifs et publics ont été retirés)
 docs/            documents reconstitués (rapport FR/ZH, cours, annexe technique)
 figures/         4 cartes régénérées depuis les rasters
-cours/           16 CM, énoncés de TD, médian et final
+cours/           supports de cours (voir cours/README.md) : 16 CM, 9 TD, médian et final
 sources/chatgpt/ transcriptions des échanges ChatGPT
 tools/           render_figures.ps1 (redessine les cartes sans ArcGIS)
 ```
@@ -171,7 +171,7 @@ Sans ArcGIS, `tools/render_figures.ps1` décode directement les GeoTIFF (float32
 | `docs/04_ANNEXE_TECHNIQUE.md` | Schémas des couches, paramètres et statistiques des rasters, workflow, formules |
 | `projet/` | Le projet ArcMap (`.mxd`, géodatabase, shapefiles, rasters) |
 | `figures/` | Cartes régénérées |
-| `cours/` | Supports de cours, TD, sujets de médian et de final |
+| `cours/` | Supports de cours, TD, sujets de médian et de final — **voir [`cours/README.md`](cours/README.md)** |
 | `sources/chatgpt/` | Transcriptions brutes des trois conversations |
 | `tools/` | Script de rendu des figures |
 
