@@ -89,7 +89,7 @@ ArcMap 打开 `projet/ProjetV2.mxd`。图层路径是绝对路径，移动目录
 
 ### 关于体积
 
-仓库约 **285 MB / 586 个文件**。为适应 GitHub 并保持可读，**已移除**体积大、且可公开重新下载的数据：CORINE Land Cover、上法兰西大区的 INSEE 与排放数据、SRCE-TVB、Météo-France 预报，以及 TD 的练习数据集（TD 的**题目与答案**保留）。这些数据源在报告和 `docs/04_ANNEXE_TECHNIQUE.md` 中都注明了生产方（IGN、AEE、INSEE、Enedis），可据此重新获取。
+仓库约 **285 MB / 585 个文件**。为适应 GitHub 并保持可读，**已移除**体积大、且可公开重新下载的数据：CORINE Land Cover、上法兰西大区的 INSEE 与排放数据、SRCE-TVB、Météo-France 预报，以及 TD 的练习数据集（TD 的**题目与答案**保留）。这些数据源在报告和 `docs/04_ANNEXE_TECHNIQUE.md` 中都注明了生产方（IGN、AEE、INSEE、Enedis），可据此重新获取。
 
 ---
 
@@ -175,4 +175,4 @@ Sans ArcGIS, `tools/render_figures.ps1` décode directement les GeoTIFF (float32
 | `sources/chatgpt/` | Transcriptions brutes des trois conversations |
 | `tools/` | Script de rendu des figures |
 
-Le dépôt fait **~285 Mo** pour 586 fichiers. Pour rester sous les limites de GitHub et garder un dépôt lisible, ont été **retirés** les jeux de données volumineux et publiquement re-téléchargeables : CORINE Land Cover, données INSEE et émissions des Hauts-de-France, données SRCE-TVB, prévisions Météo-France, et les jeux d'exercice des TD (les énoncés et corrigés, eux, sont conservés). Toutes ces sources sont citées dans [`docs/04_ANNEXE_TECHNIQUE.md`](docs/04_ANNEXE_TECHNIQUE.md) et le rapport, avec leurs producteurs (IGN, AEE, INSEE, Enedis).
+Le dépôt fait **~285 Mo** pour 585 fichiers. Pour rester sous les limites de GitHub et garder un dépôt lisible, ont été **retirés** les jeux de données volumineux et publiquement re-téléchargeables : CORINE Land Cover, données INSEE et émissions des Hauts-de-France, données SRCE-TVB, prévisions Météo-France, et les jeux d'exercice des TD (les énoncés et corrigés, eux, sont conservés). Toutes ces sources sont citées dans [`docs/04_ANNEXE_TECHNIQUE.md`](docs/04_ANNEXE_TECHNIQUE.md) et le rapport, avec leurs producteurs (IGN, AEE, INSEE, Enedis).
