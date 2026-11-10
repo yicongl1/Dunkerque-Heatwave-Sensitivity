@@ -113,11 +113,11 @@ Un SIG répond bien à la question « où ? » et « combien ? » ; il répond m
 
 La méthode classique est la **somme pondérée** (*Weighted Overlay* / *Raster Calculator*) :
 
-$$S = \sum_{i=1}^{n} p_i \cdot c_i^{*} \quad \text{avec} \quad \sum p_i = 1$$
+$$S = \sum_{i=1}^{n} p_i \cdot c_i^{\ast} \quad \text{avec} \quad \sum p_i = 1$$
 
-où $c_i^{*} \in [0;1]$ est le critère normalisé et $p_i$ son poids. Les poids peuvent être fixés par **comparaison par paires (AHP de Saaty)** ou par dire d'expert. L'AHP impose la cohérence : le ratio de cohérence (CR) doit rester inférieur à 0,10.
+où $c_i^{\ast} \in [0;1]$ est le critère normalisé et $p_i$ son poids. Les poids peuvent être fixés par **comparaison par paires (AHP de Saaty)** ou par dire d'expert. L'AHP impose la cohérence : le ratio de cohérence (CR) doit rester inférieur à 0,10.
 
-**Piège classique** : additionner des critères « aggravants » et des critères « limitants » sans inverser le sens. Un critère limitant (végétation, eau) doit être **inversé** ($1 - c^{*}$) avant sommation, sinon une forte végétation *augmente* la sensibilité calculée.
+**Piège classique** : additionner des critères « aggravants » et des critères « limitants » sans inverser le sens. Un critère limitant (végétation, eau) doit être **inversé** ($1 - c^{\ast}$) avant sommation, sinon une forte végétation *augmente* la sensibilité calculée.
 
 ## 1.7 Limites de l'approche
 
@@ -302,13 +302,13 @@ Les statistiques ci-dessous sont **extraites des fichiers `.tif.aux.xml` livrés
 
 Les trois rasters n'ont ni la même unité ni la même amplitude. Normalisation **min-max** sur l'emprise communale :
 
-$$c^{*} = \frac{c - c_{min}}{c_{max} - c_{min}} \in [0;1]$$
+$$c^{\ast} = \frac{c - c_{min}}{c_{max} - c_{min}} \in [0;1]$$
 
 ### 3.7.2 Inversion des critères limitants
 
 Le bâti est aggravant, la végétation et l'eau sont limitants :
 
-$$B^{*} = c^{*}_{bati} \qquad V^{*} = 1 - c^{*}_{vege} \qquad E^{*} = 1 - c^{*}_{eau}$$
+$$B^{\ast} = c^{\ast}_{bati} \qquad V^{\ast} = 1 - c^{\ast}_{vege} \qquad E^{\ast} = 1 - c^{\ast}_{eau}$$
 
 ### 3.7.3 Pondération
 
@@ -325,9 +325,9 @@ Les poids ont été fixés par **comparaison par paires**, en s'appuyant sur tro
 
 ### 3.7.4 Formule de synthèse
 
-$$S = 0{,}50 \cdot B^{*} + 0{,}33 \cdot V^{*} + 0{,}17 \cdot E^{*}$$
+$$S = 0{,}50 \cdot B^{\ast} + 0{,}33 \cdot V^{\ast} + 0{,}17 \cdot E^{\ast}$$
 
-$$S = 0{,}50 \cdot c^{*}_{bati} + 0{,}33 \cdot (1 - c^{*}_{vege}) + 0{,}17 \cdot (1 - c^{*}_{eau})$$
+$$S = 0{,}50 \cdot c^{\ast}_{bati} + 0{,}33 \cdot (1 - c^{\ast}_{vege}) + 0{,}17 \cdot (1 - c^{\ast}_{eau})$$
 
 Implémentation : `Raster Calculator` (algèbre de cartes), après rééchantillonnage des trois rasters sur une **grille commune** (cf. § 3.3, faiblesse identifiée).
 
@@ -343,7 +343,7 @@ Le raster de synthèse `EffetEns` est classé en **5 niveaux** (très faible, fa
 
 Structure attendue (et cohérente avec les statistiques) :
 
-- **Sensibilité très forte** : centre-ville dense, front portuaire industrialo-portuaire, zones d'activités et grands équipements minéraux. Ce sont les zones où $B^{*}$ est proche de 1 et où $V^{*}$ et $E^{*}$ sont proches de 1 (donc aucune compensation).
+- **Sensibilité très forte** : centre-ville dense, front portuaire industrialo-portuaire, zones d'activités et grands équipements minéraux. Ce sont les zones où $B^{\ast}$ est proche de 1 et où $V^{\ast}$ et $E^{\ast}$ sont proches de 1 (donc aucune compensation).
 - **Sensibilité forte** : premier anneau autour du centre, tissu mixte bâti dense / jardins privés.
 - **Sensibilité moyenne** : tissu pavillonnaire, zones avec végétation de proximité.
 - **Sensibilité faible à très faible** : abords des grands bassins, secteurs de dunes et d'estran, franges agricoles du sud.
@@ -485,9 +485,9 @@ Effet de rafraîchissement des zones d'eau.tif
 
 ## C. Formule de l'indice (à recopier dans le rapport)
 
-$$S = 0{,}50\,B^{*} + 0{,}33\,(1 - V^{*}) + 0{,}17\,(1 - E^{*})$$
+$$S = 0{,}50\,B^{\ast} + 0{,}33\,(1 - V^{\ast}) + 0{,}17\,(1 - E^{\ast})$$
 
-avec $B^{*}$, $V^{*}$, $E^{*}$ normalisés min-max sur l'emprise communale.
+avec $B^{\ast}$, $V^{\ast}$, $E^{\ast}$ normalisés min-max sur l'emprise communale.
 
 ## D. Bibliographie indicative
 

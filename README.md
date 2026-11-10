@@ -11,6 +11,23 @@
 
 ---
 
+## Rapport / 报告 — le livrable principal / 主要交付物
+
+Ce README n'est qu'un résumé. **Le rapport complet (≈ 20 pages) est le livrable du projet**, intégralement lisible en ligne :
+本 README 只是摘要，**项目的正式交付物是这份 20 页的报告**，可直接在线阅读：
+
+| Document | Contenu |
+|---|---|
+| [**Rapport FR** — `docs/01_RAPPORT_Dunkerque_FR.md`](docs/01_RAPPORT_Dunkerque_FR.md) | 1. État de l'art (5 p.) · 2. Territoire de Dunkerque (1 p.) · 3. Analyse de la sensibilité (10 p.) · 4. Conclusion, analyse critique et pistes d'amélioration (3 p.) · 5. Répartition du travail · Annexes A–D (dictionnaire des couches, statistiques, formule, bibliographie) |
+| [**中文报告** — `docs/02_RAPPORT_Dunkerque_ZH.md`](docs/02_RAPPORT_Dunkerque_ZH.md) | 1. 研究现状 · 2. 研究区域：敦刻尔克 · 3. 敏感性分析 · 4. 结论、批判性分析与改进方向 · 5. 分工 · 附录 A–D |
+
+Le rapport contient ce que ce README ne fait que résumer : l'état de l'art sur l'îlot de chaleur urbain, la justification du choix des trois critères et de leurs poids, la lecture détaillée de la carte de synthèse, **l'analyse critique du travail** (rééchantillonnage implicite, paramètres de noyau non conservés, absence de validation terrain) et les pistes d'amélioration.
+报告里才有 README 无法展开的内容：城市热岛的研究现状、三个准则及其权重的论证、综合图的分区解读、**对本工作的批判性分析**（隐式重采样、核函数参数未留存、缺现场验证）以及改进方向。
+
+Détail des fichiers, champs et paramètres : [`docs/04_ANNEXE_TECHNIQUE.md`](docs/04_ANNEXE_TECHNIQUE.md).
+
+---
+
 ## 中文
 
 ### 一句话
@@ -47,7 +64,7 @@
 4. **掩膜裁剪**到市镇边界；
 5. **归一化 + 取反 + 加权**（AMC）：
 
-$$S = 0{,}50 \cdot B^{*} + 0{,}33 \cdot (1 - V^{*}) + 0{,}17 \cdot (1 - E^{*})$$
+$$S = 0{,}50 \cdot B^{\ast} + 0{,}33 \cdot (1 - V^{\ast}) + 0{,}17 \cdot (1 - E^{\ast})$$
 
 建筑是"加剧型"，植被和水体是"缓解型"，所以后两者必须**取反**，否则植被越多算出的敏感性越高。
 
@@ -119,7 +136,7 @@ Statistiques lues directement dans les `.aux.xml` livrés avec les rasters :
 4. **Masque** sur la commune.
 5. **Normalisation, inversion des critères limitants, somme pondérée** :
 
-$$S = 0{,}50 \cdot B^{*} + 0{,}33 \cdot (1 - V^{*}) + 0{,}17 \cdot (1 - E^{*})$$
+$$S = 0{,}50 \cdot B^{\ast} + 0{,}33 \cdot (1 - V^{\ast}) + 0{,}17 \cdot (1 - E^{\ast})$$
 
 Le bâti est aggravant, la végétation et l'eau sont limitants : sans inversion ($1 - x$), plus de végétation *augmenterait* la sensibilité calculée — c'est le piège classique de l'AMC.
 
